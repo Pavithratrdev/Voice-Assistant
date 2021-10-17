@@ -164,18 +164,18 @@ with sr.Microphone() as source:
         print(words[-1])
         play_youtube(audio)
         
-    elif 'open' in audio:
-        print('..')
-        words = audio.split('open')
-        print(words[-1])
-        link = str(words[-1])
-        link = re.sub(' ', '', link)
-        engine.say('Opening')
-        engine.say(link)
-        engine.runAndWait()
-        link = f'https://{link}.com'
-        print(link)
-        webbrowser.open(link)
+    # elif 'open' in audio:
+    #     print('..')
+    #     words = audio.split('open')
+    #     print(words[-1])
+    #     link = str(words[-1])
+    #     link = re.sub(' ', '', link)
+    #     engine.say('Opening')
+    #     engine.say(link)
+    #     engine.runAndWait()
+    #     link = f'https://{link}.com'
+    #     print(link)
+    #     webbrowser.open(link)
         
     elif 'where is' in audio:
         print('..')
