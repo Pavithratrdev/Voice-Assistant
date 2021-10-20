@@ -5,6 +5,7 @@ import speech_recognition as sr
 from datetime import date
 import webbrowser
 import pyttsx3
+import pywhatkit
 
 def scrape_weather(city):
     url = 'https://www.google.com/search?q=accuweather+' + city
@@ -107,24 +108,9 @@ def scrape_news():
     engine.runAndWait()
 
 def play_youtube(audio):
+    pywhatkit.playonyt(audio)
+    print("playing....")
 
-    url = 'https://www.google.com/search?q=youtube+' + audio
-    headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'
-    }
-    engine.say('Playing')
-    engine.say(audio)
-    engine.runAndWait()
-    page = requests.get(url, headers=headers)
-    soup = BeautifulSoup(page.content, 'html.parser')
-    link = soup.findAll('div', attrs = {'class':'r'})
-    link = link[0]
-    link = link.find('a')
-    link = str(link)
-    link = link.split('"')
-    link = link[1]
-
-    webbrowser.open(link)
 
     
 engine = pyttsx3.init('sapi5')
