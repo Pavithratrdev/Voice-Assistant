@@ -1,7 +1,7 @@
 # Voice-Assistant
 Voice assistant that responds to user queries.
 
-Packages Requried
+Packages Required
 ----------------
 . SpeechRecognition 	
 
